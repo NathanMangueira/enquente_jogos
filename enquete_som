@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+  <form method="POST" action="">
+    <p>Qual gênero de música você prefere? </p>
+    <input id="som_funk" type="som" name="enquete_som" value="forro">
+    <label for="som_funk">forro</label>
+
+     <input id="som_pop" type="som" name="enquete_som" value="sertanejo">
+    <label for="som_pop">sertanejo</label>
+
+    <input id="som_MPB" type="som" name="enquete_som" value="funk">
+    <label for="som_MPB">funk</label>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+</body>
+
+</html>
+
+<?php  
+      if (isset($_POST['enquete_som'])){
+        setcookie('enquete_som', $_POST[enquete_som]);
+      }
+
+      if(isset($_COOKIE['enquete_som'])){
+        echo "Você já voltou. Não pode fazer novamente";
+        } else{
+            include 'som.html';
+       
+     
+      }
+       
+?> 
